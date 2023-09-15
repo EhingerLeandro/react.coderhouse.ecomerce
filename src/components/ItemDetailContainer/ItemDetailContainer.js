@@ -21,8 +21,8 @@ const ItemDetailContainer = () =>{
     },[id])
     console.log(product)
     return(
-        <div>
-            <ItemDetail className='' {...product}/>
+        <div className='row justify-content-center' >
+            <ItemDetail  {...product}/>
         </div>
     )
 

@@ -18,10 +18,10 @@ const Counter =({initial, stock, onAdd})=>{
 
     return(
         <di>
-            <button onClick={countAdd}>+</button>
+            <button className='btn btn-success m-1' onClick={countSubtract}>-</button>
             <span>Cantidad: {count}</span>
-            <button onClick={countSubtract}>-</button>
-            <button onClick = {()=>onAdd(count)}>Agregar al Carrito </button>
+            <button className='btn btn-success m-1' onClick={countAdd}>+</button>
+            <button className='btn btn-success m-1' onClick = {()=>onAdd(count)}>Agregar al Carrito </button>
         </di>
     )
 } 

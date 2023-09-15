@@ -2,9 +2,9 @@ import cart from './Assets/shopping-cart.png'
 
 const CartWidget =()=>{
     return(
-        <div>
-            <img src={cart} alt='Cart Widget'/><br/>
-            <span>0</span>
+        <div classNma='d-flex'>
+            <img src={cart} alt='Cart Widget'/>
+            <span>(0)</span>
         </div>
     )
 }
