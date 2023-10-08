@@ -11,7 +11,9 @@ const NavBar = () =>{
                 <NavLink className='m-1' to={'/category/tablet'}><button className='btn btn-primary'>Tablets</button></NavLink>
                 <NavLink className='m-1' to={'/category/laptop'}><button className='btn btn-primary'>Laptops</button></NavLink>
             </ul>
-            <CarWidget/>
+            <Link className='logo' to='/cart'>
+                <CarWidget/>
+            </Link>
         </nav>
     )
 }

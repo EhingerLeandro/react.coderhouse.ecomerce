@@ -22,7 +22,7 @@ const ItemListContainer=(props)=>{
 
     return(
         <div >
-            <h1>{props.greeting}</h1>
+            <h1 style={{padding:'5px', fontFamily:'fantasy', color:'#33a', marginTop:'5px'}}>{props.greeting}</h1>
             <ItemList products={products}/>
         </div>
     )

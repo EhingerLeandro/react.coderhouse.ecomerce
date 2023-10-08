@@ -1,0 +1,13 @@
+.CartItem{
+    display:flex;
+    justify-content: center;
+    margin:3px;
+    
+}
+
+.CartItemBlock{
+    padding: 5px;
+    background-color: beige;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5%;
+}
