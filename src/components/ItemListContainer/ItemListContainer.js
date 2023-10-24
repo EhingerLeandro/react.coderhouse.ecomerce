@@ -3,21 +3,41 @@ import {mockFetch, mockCategory}  from "../AsyncMock/AsyncMock";
 import {useParams} from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 
+import{getDocs, collection, query, where} from 'firebase/firestore';
+import {db} from '../../services/firebase/firebaseConfig'
+
 const ItemListContainer=(props)=>{
 
     const [products, setProducts] = useState([]);
-    
+    const [loading, setLoading] = useState(true);
+
     const {categoryId} = useParams();
 
     console.log(categoryId)
     console.log(typeof(categoryId));
 
-    let asyncFunction = categoryId ? mockCategory : mockFetch;
-
     useEffect(()=>{
-        asyncFunction(categoryId)
-            .then(response => setProducts(response))
+        setLoading(true);
+        // antes en la siguiente linea estaba asyncFunction en vez de collectionRef
+        // antes en la linea con el simbolo '?' estaba 'mockCategory' 
+        let collectionRef = categoryId 
+        ? query( collection(db, 'products'), where('category', '==', categoryId))
+        : collection(db, 'products');
+        // antes de la anterior línea estaba 'mockFetch'
+
+        // antes en la siguiente línea se había puesto 'asyncFunction(categoryId)'
+        getDocs(collectionRef)
+            .then(response =>{ 
+                const productsAdapted = response.docs.map(doc=>{
+                    const data = doc.data()
+                    return {id: doc.id, ...data}
+                })
+                setProducts(productsAdapted);
+            })
             .catch(error => console.log('Error: ', error))
+            .finally(()=>{
+                setLoading(false)
+            })
     }, [categoryId])
 
     return(
