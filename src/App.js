@@ -5,7 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart.js'
 import './App.css';
 import {CartProvider} from './context/CartContext.js'
-
+import Checkout from './components/Checkout/Checkout.js'
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
             <Route path='/category/:categoryId' element={<ItemListContainer/>} />
             <Route path='/*' element={<h1>Not Found 404</h1>} />
             <Route path='/cart'  element={<Cart/>} />
+            <Route path='/checkout'element={<Checkout/>}/> 
           </Routes>
         </CartProvider>
      </BrowserRouter>

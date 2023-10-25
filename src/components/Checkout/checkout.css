@@ -1,0 +1,21 @@
+.form-group{
+    margin:5px;
+}
+
+.form-label{
+    margin:0px 5px;
+}
+
+.form-strong{
+    margin:8px;
+    font-weight: bolder;
+    color:darkgreen;
+}
+
+.form-total{
+    font-weight: bolder;
+}
+
+.form{
+    margin: 10px;
+}
