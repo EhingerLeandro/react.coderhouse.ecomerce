@@ -1,4 +1,5 @@
-
+//Este componente ya no es utilizado en la aplicación, puesto que se usa firebase,
+//sin embargo ilustra la manera en que se usan las promesas.
 const mockArray = [
     {
         id:1,
@@ -31,9 +32,9 @@ const mockArray = [
 
 export const mockFetch =()=>{
     return new Promise((resolve)=>{
-       setTimeout(()=> {
-        resolve(mockArray)
-    }, 1000)
+        setTimeout(()=> {
+            resolve(mockArray)
+        }, 1000)
     })
 }
 

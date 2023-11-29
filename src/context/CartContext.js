@@ -29,16 +29,18 @@ export const CartProvider = ({children}) =>{
             // agregar un nuevo objeto que representa el nuevo producto.
             // Se parece a .push() pero en react no se usa porque push trae problemas.
         } else{
-             const carritoActualizado = cart.map( produ => {
-                if(produ.item.id=== item.id){
-                    return {...produ, cantidad: produ.cantidad + cantidad};
-                }else {
-                    return produ;
-                }
-             })
-             setCart(carritoActualizado);
-             setCantidadTotal( prev => prev + cantidad);
-             setTotal (prev => prev + (item.price * cantidad));
+            const carritoActualizado = cart.map( produ => {
+            if(produ.item.id=== item.id){
+                //En la siguiente linea se actualiza la propiedad cantidad que está
+                //dentro de produ.
+                return {...produ, cantidad: produ.cantidad + cantidad};
+            }else {
+                return produ;
+            }
+            })
+            setCart(carritoActualizado);
+            setCantidadTotal( prev => prev + cantidad);
+            setTotal (prev => prev + (item.price * cantidad));
         }
     }   
     //función que elimina un producto del carrito.

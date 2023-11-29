@@ -1,4 +1,5 @@
 import Counter from '../Counter/Counter'
+import './itemDetail.css'
 import Cart from '../Cart/Cart'
 import { Link } from 'react-router-dom'
 import {useState, useEffect} from 'react'
@@ -32,18 +33,16 @@ const ItemDetail =({id, name, category, stock, description, price, img}) =>{
                 <p>Price: ${price}</p>
                 <p>Stock: {stock} Unidades</p>
             </section >
-            <footer className=''>
+            <footer className='card-foot'>
                 <p>{description}</p>
                 {
                     quantityAdded > 0 ?
                     <Link to='/cart'><button className='btn btn-warning'>Terminar Compra</button> </Link>:
                     <Counter initial={0}  stock={10} onAdd={handleAddOn}/> 
-                
                 }
             </footer>
-
         </article>
-        )
+    )
 }
 
 export default ItemDetail;

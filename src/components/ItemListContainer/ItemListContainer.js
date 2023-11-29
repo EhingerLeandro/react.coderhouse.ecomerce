@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import {mockFetch, mockCategory}  from "../AsyncMock/AsyncMock";
+import { TailSpin } from "react-loader-spinner";
+// import {mockFetch, mockCategory}  from "../AsyncMock/AsyncMock";
 import {useParams} from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 
@@ -43,7 +44,13 @@ const ItemListContainer=(props)=>{
     return(
         <div >
             <h1 style={{padding:'5px', fontFamily:'fantasy', color:'#33a', marginTop:'5px'}}>{props.greeting}</h1>
-            <ItemList products={products}/>
+            {
+                loading
+                ? <div style={{ height:'50vh', display:'flex', justifyContent:'center', alignItems:'center'}}>
+                    <TailSpin/>
+                  </div>
+                :<ItemList products={products}/>
+            }
         </div>
     )
 }
