@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/React.coderhouse.ecomerce%20/static/css/main.7d3bace5.css",
-    "main.js": "/React.coderhouse.ecomerce%20/static/js/main.3ac70563.js",
-    "static/js/787.18f786e1.chunk.js": "/React.coderhouse.ecomerce%20/static/js/787.18f786e1.chunk.js",
-    "index.html": "/React.coderhouse.ecomerce%20/index.html",
-    "main.7d3bace5.css.map": "/React.coderhouse.ecomerce%20/static/css/main.7d3bace5.css.map",
-    "main.3ac70563.js.map": "/React.coderhouse.ecomerce%20/static/js/main.3ac70563.js.map",
-    "787.18f786e1.chunk.js.map": "/React.coderhouse.ecomerce%20/static/js/787.18f786e1.chunk.js.map"
+    "main.css": "/React.coderhouse.ecomerce/static/css/main.7d3bace5.css",
+    "main.js": "/React.coderhouse.ecomerce/static/js/main.de6ee11c.js",
+    "static/js/787.18f786e1.chunk.js": "/React.coderhouse.ecomerce/static/js/787.18f786e1.chunk.js",
+    "index.html": "/React.coderhouse.ecomerce/index.html",
+    "main.7d3bace5.css.map": "/React.coderhouse.ecomerce/static/css/main.7d3bace5.css.map",
+    "main.de6ee11c.js.map": "/React.coderhouse.ecomerce/static/js/main.de6ee11c.js.map",
+    "787.18f786e1.chunk.js.map": "/React.coderhouse.ecomerce/static/js/787.18f786e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d3bace5.css",
-    "static/js/main.3ac70563.js"
+    "static/js/main.de6ee11c.js"
   ]
 }
