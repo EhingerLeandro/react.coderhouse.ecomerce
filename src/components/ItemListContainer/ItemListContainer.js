@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
-// import {mockFetch, mockCategory}  from "../AsyncMock/AsyncMock";
+/*import {mockFetch, mockCategory}  from "../AsyncMock/AsyncMock";*/
 import {useParams} from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 
@@ -24,7 +24,7 @@ const ItemListContainer=(props)=>{
         let collectionRef = categoryId 
         ? query( collection(db, 'products'), where('category', '==', categoryId))
         : collection(db, 'products');
-        // antes de la anterior línea estaba 'mockFetch'
+        // antes en la anterior línea estaba 'mockFetch'
 
         // antes en la siguiente línea se había puesto 'asyncFunction(categoryId)'
         getDocs(collectionRef)
