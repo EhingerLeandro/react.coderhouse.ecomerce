@@ -14,24 +14,27 @@ const ItemListContainer=(props)=>{
 
     const {categoryId} = useParams();
 
-    console.log(categoryId)
-    console.log(typeof(categoryId));
-
     useEffect(()=>{
         setLoading(true);
-        // antes en la siguiente linea estaba asyncFunction en vez de collectionRef
-        // antes en la linea con el simbolo '?' estaba 'mockCategory' 
+        // Antes en la siguiente linea estaba asyncFunction en vez de collectionRef
+        // Antes en la linea con el simbolo '?' estaba 'mockCategory' .
         let collectionRef = categoryId 
+        //Aquí se hace una busqueda dentro de todo la colección con y sin category.
         ? query( collection(db, 'products'), where('category', '==', categoryId))
         : collection(db, 'products');
-        // antes en la anterior línea estaba 'mockFetch'
+        // Antes en la anterior línea estaba 'mockFetch'.
 
-        // antes en la siguiente línea se había puesto 'asyncFunction(categoryId)'
+        // Antes en la siguiente línea se había puesto 'asyncFunction(categoryId)'
         getDocs(collectionRef)
             .then(response =>{ 
                 const productsAdapted = response.docs.map(doc=>{
-                    const data = doc.data()
-                    return {id: doc.id, ...data}
+                    const data = doc.data();
+                    // .map() junto con el return del objeto funciona como .push()
+                    /* La estructura {id: doc.id, ...data} sirve para agregar el
+                    id generado de manera automática por firebase, de lo contrario
+                    no sería posible ubicar cada objeto al interior del arreglo
+                    generado en el respectivo useState*/ 
+                    return {id: doc.id, ...data};
                 })
                 setProducts(productsAdapted);
             })

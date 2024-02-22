@@ -13,9 +13,6 @@ const Item = ({id, name, price, description, img, stock, category}) =>{
             <section className=''>
                 <p>Precio: ${price}</p>
             </section>
-            {/* <section className=''>
-                <p>Stock: {stock}</p>
-            </section> */}
             <footer className=''>
                 <Link to={`/item/${id}`}><button type='button' className='btn btn-success'>Ver detalle</button></Link>
             </footer>

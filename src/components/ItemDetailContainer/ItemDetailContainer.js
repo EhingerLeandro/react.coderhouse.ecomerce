@@ -15,7 +15,8 @@ const ItemDetailContainer = () =>{
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     
-
+    /*Este useParams es una función que usa la dirección del sitio 
+    para extraer y usar como referencia un dato de la dirección.*/
     const {id} = useParams();
     
     //La siguiente línea de código se utilizaba para convertir un string proveniente de
@@ -28,10 +29,13 @@ const ItemDetailContainer = () =>{
 
         const docRef = doc(db, 'products', id)
 
-        //antes de la siguiente línea estaba: 'mockFetchId(idAsNumber)'
+        //antes de la siguiente línea estaba: 'mockFetchId(idAsNumber)'.
         getDoc(docRef)
             .then(response => {
+                // '.data()' está predefinido en firebase para sacar la info.
                 const data = response.data();
+                /*Esta sintaxis crea un nuevo objeto que incluye la propiedad id,
+                y si ya existia la actualiza.*/
                 const productAdapted = {id: data.id, ...data}
                 setProduct(productAdapted)
             })
@@ -41,8 +45,6 @@ const ItemDetailContainer = () =>{
             })
     },[id])
 
-    console.log(product)
-    
     return(
         <div className='row justify-content-center' >
                 { 

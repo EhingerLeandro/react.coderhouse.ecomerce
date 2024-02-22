@@ -10,7 +10,9 @@ import Checkout from './components/Checkout/Checkout.js'
 function App() {
   return (
     <div className="App ">
+      {/*Este BrowserRouter permite generar los enlaces que permite llegar a otros componentes*/}
       <BrowserRouter>
+        {/*Este CartProvider permite enviar las variables del createContext a todos los componentes*/}
         <CartProvider>
           <NavBar/>
           <Routes>
@@ -19,7 +21,7 @@ function App() {
             <Route path='/category/:categoryId' element={<ItemListContainer/>} />
             <Route path='/*' element={<h1>Not Found 404</h1>} />
             <Route path='/cart'  element={<Cart/>} />
-            <Route path='/checkout'element={<Checkout/>}/> 
+            <Route path='/checkout'element={<Checkout/>} /> 
           </Routes>
         </CartProvider>
      </BrowserRouter>

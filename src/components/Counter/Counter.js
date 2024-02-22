@@ -17,12 +17,12 @@ const Counter =({initial, stock, onAdd})=>{
     }
 
     return(
-        <di>
+        <div>
             <button className='btn btn-success m-1' onClick={countSubtract}>-</button>
             <span>Cantidad: {count}</span>
             <button className='btn btn-success m-1' onClick={countAdd}>+</button>
             <button className='btn btn-success m-1' onClick = {()=>onAdd(count)}>Agregar al Carrito </button>
-        </di>
+        </div>
     )
 } 
 

@@ -1,8 +1,8 @@
 import Counter from '../Counter/Counter'
 import './itemDetail.css'
-import Cart from '../Cart/Cart'
+// import Cart from '../Cart/Cart'
 import { Link } from 'react-router-dom'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import {CartContext} from '../../context/CartContext';
 import {useContext} from 'react'
 
@@ -10,7 +10,7 @@ const ItemDetail =({id, name, category, stock, description, price, img}) =>{
     
     const [quantityAdded, setAddQuantity] = useState(0)
 
-    //useContext
+    //Se trae la función agregarProducto con useContext.
     const {agregarProducto} =useContext(CartContext)
 
     const handleAddOn = (quantity)=>{

@@ -13,10 +13,6 @@ export const CartProvider = ({children}) =>{
     const [total, setTotal] = useState(0);
     const [cantidadTotal, setCantidadTotal]= useState(0);
 
-    console.log(cart);
-    console.log(total);
-    console.log(cantidadTotal)
-
     //función que agrega un producto, si ya existe no crea un nuevo objeto, solo añade más cantidades.
     const agregarProducto =(item, cantidad)=>{
         const productoExistente= cart.find(prod => prod.item.id === item.id);
