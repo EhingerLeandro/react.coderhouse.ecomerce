@@ -18,12 +18,12 @@ const ItemListContainer=(props)=>{
         setLoading(true);
         // Antes en la siguiente linea estaba asyncFunction en vez de collectionRef
         // Antes en la linea con el simbolo '?' estaba 'mockCategory' .
-        let collectionRef = categoryId 
-        //Aquí se hace una busqueda dentro de todo la colección con y sin category.
-        ? query( collection(db, 'products'), where('category', '==', categoryId))
-        : collection(db, 'products');
-        // Antes en la anterior línea estaba 'mockFetch'.
-
+        let collectionRef = (
+            //Aquí se hace una busqueda dentro de todo la colección con y sin category.
+            categoryId ? query( collection(db, 'products'), where('category', '==', categoryId))
+            : collection(db, 'products')
+            // Antes en la anterior línea estaba 'mockFetch'.
+        );
         // Antes en la siguiente línea se había puesto 'asyncFunction(categoryId)'
         getDocs(collectionRef)
             .then(response =>{ 

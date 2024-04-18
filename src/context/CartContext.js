@@ -1,11 +1,13 @@
 import {useState, createContext} from 'react';
 
 //Cantidad inicial determinada desde el context.
-export const CartContext = createContext({
-    cart: [],
+export const CartContext = createContext(
+    //Este objeto dentro del createContext es una guía que sirve a otros 
+    //desarrolladores, la cual permite previsualizar el dato que se quiere obtener.
+    {cart: [],
     total: 0,
-    cantidadTotal: 0
-})
+    cantidadTotal: 0}
+)
 
 //Componente donde se generan las funcionalidades aplicadas desde el context a otros componentes.
 export const CartProvider = ({children}) =>{
@@ -20,10 +22,10 @@ export const CartProvider = ({children}) =>{
             setCart(prev=>[...prev, {item, cantidad}]);
             setCantidadTotal(prev => prev + cantidad);
             setTotal(prev=> prev + (item.price * cantidad));
-            // La sintaxis prev =>[...prev, {item, cantidad}] se utiliza
-            // para crear un array a partir del estado anterior del carrito (prev),
-            // agregar un nuevo objeto que representa el nuevo producto.
-            // Se parece a .push() pero en react no se usa porque push trae problemas.
+            /* La sintaxis prev =>[...prev, {item, cantidad}] se utiliza
+            para crear un array a partir del estado anterior del carrito (prev),
+            y así agregar un nuevo objeto que representa el nuevo producto
+            Se parece a .push() pero en react no se usa porque push trae problemas.*/
         } else{
             const carritoActualizado = cart.map( produ => {
             if(produ.item.id=== item.id){

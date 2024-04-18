@@ -19,9 +19,9 @@ const ItemDetailContainer = () =>{
     para extraer y usar como referencia un dato de la dirección.*/
     const {id} = useParams();
     
-    //La siguiente línea de código se utilizaba para convertir un string proveniente de
-    //useParams, donde dicho string tiene forma númerica, pero necesita ser convertido
-    //en un verdadero número.
+    /*La siguiente línea de código se utilizaba para convertir un string proveniente de
+    useParams, donde dicho string tiene forma númerica, pero necesita ser convertido
+    en un verdadero número.*/
     /*let idAsNumber = parseInt(id,  10);*/
 
     useEffect( ()=>{
