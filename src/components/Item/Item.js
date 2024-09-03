@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './itemStyle.css';
+import fallbackImage from "../../assets/no_disponible.jpg";
 
 const Item = ({id, name, price, description, img, stock, category}) =>{
     return(
@@ -8,7 +9,10 @@ const Item = ({id, name, price, description, img, stock, category}) =>{
                 <h2 className=''>{name}</h2>
             </header>
             <picture className='imgContainer'>
-                    <img className='imgObjectFit' alt={name} src={img}/>
+                    <img className='imgObjectFit' 
+                    alt={name} 
+                    src={img}
+                    onError={(e)=> e.target.src=fallbackImage}/>
             </picture>
             <section className=''>
                 <p>Precio: ${price}</p>

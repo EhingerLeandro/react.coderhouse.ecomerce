@@ -2,16 +2,16 @@ import Counter from '../Counter/Counter'
 import './itemDetail.css'
 // import Cart from '../Cart/Cart'
 import { Link } from 'react-router-dom'
-import {useState} from 'react'
-import {CartContext} from '../../context/CartContext';
-import {useContext} from 'react'
+import {useState , useContext} from 'react'
+import {CartContext} from '../../context/CartContext'
+import fallbackImage from "../../assets/no_disponible.jpg"
 
 const ItemDetail =({id, name, category, stock, description, price, img}) =>{
     
     const [quantityAdded, setAddQuantity] = useState(0)
-
     //Se trae la función agregarProducto con useContext.
     const {agregarProducto} =useContext(CartContext)
+
 
     const handleAddOn = (quantity)=>{
         setAddQuantity(quantity)
@@ -27,7 +27,10 @@ const ItemDetail =({id, name, category, stock, description, price, img}) =>{
                 <h2>{name}</h2>
             </header>
             <picture className='imgContainer'>
-                <img className='imgObjectFit' alt={name} src={img}/>
+                <img className='imgObjectFit' 
+                alt={name} 
+                src={img} 
+                onError={(e)=>(e.target.src = fallbackImage)}/>
             </picture >
             <section className=''>
                 <p>Price: ${price}</p>
